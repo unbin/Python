@@ -38,4 +38,4 @@ while(1):
     else:
         print("failed")
 
-    print("Result: {:f}".format(result))
+    print("Result: {:g}".format(result))
