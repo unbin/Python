@@ -18,14 +18,12 @@ def newUser(user):
     # Generate hash
     chars = string.ascii_letters + string.digits
     salt = random.choice(chars) + random.choice(chars)
-
-    print("Salt: " + salt)
-
     userList[user] = crypt(password, salt)
 
-    # Write to users.json file
-    json.dump(userList, open("users.json", "w"))
-    print("Updated users.json with user id", user)
+    # Update users.json and create a new user vault file
+    json.dump(userList, open("users.json", "w+"))
+    json.dump({}, open("vaults/" + user + ".json", "w+"))
+    print("Created new user " + user)
 
 def login(user):
     salt = userList[user][:2]

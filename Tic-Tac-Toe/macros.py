@@ -1,0 +1,2 @@
+BOARDW = 3
+BOARDH = 3

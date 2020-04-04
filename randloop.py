@@ -18,7 +18,6 @@ def fatal(err):
     sys.exit(1)
 
 # MAIN
-
 # Check Input
 if len(sys.argv) != 3:
     fatal("Invalid number of arguments.")

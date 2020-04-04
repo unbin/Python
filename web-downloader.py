@@ -22,7 +22,12 @@ res = requests.get(argv[1])
 res.raise_for_status()
 
 # Write to file
-fd = open(argv[2], 'wb')
-soup = BeautifulSoup(res.text, "html.parser")
-fd.write(soup.prettify().encode())
-fd.close()
+with open(argv[2], 'wb') as fd:
+    soup = BeautifulSoup(res.text, "html.parser")
+    fd.write(soup.prettify().encode())
+    fd.close()
+
+#fd = open(argv[2], 'wb')
+#soup = BeautifulSoup(res.text, "html.parser")
+#fd.write(soup.prettify().encode())
+#fd.close()
